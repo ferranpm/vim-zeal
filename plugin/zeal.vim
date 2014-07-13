@@ -37,6 +37,11 @@ endfunction
 function! GetDocsetWord(docset, word)
     if ((a:docset == "C++") || (a:docset == "C")) && (match(a:word, "Q") >= 0)
         return 'Qt'
+    elseif a:docset == "Javascript"
+        let line = getline('.')[0:virtcol('.')]
+        if (match(line, '\m\$') > 0)
+            return 'jQuery'
+        endif
     endif
     return a:docset
 endfunction
