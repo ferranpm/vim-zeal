@@ -42,7 +42,7 @@ function! GetDocsetWord(docset, word)
 endfunction
 
 function! RunZeal(docset, word)
-    execute ":silent !".s:zeal." --query ".a:docset.":".a:word
+    execute ":silent !".s:zeal." --query ".a:docset.":".a:word."&"
     redraw!
 endfunction
 
