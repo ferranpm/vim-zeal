@@ -18,9 +18,11 @@ let s:filetype_zeal = {
             \ }
 
 if has('win32') || has('win64')
-    let s:zeal = "C:/zeal/zeal.exe"
+    let s:zeal_pre = "start C:/zeal/zeal.exe"
+    let s:zeal_post = ""
 else
-    let s:zeal = "zeal"
+    let s:zeal_pre = "zeal"
+    let s:zeal_post = " &"
 endif
 
 function! GetDocset()
@@ -47,7 +49,7 @@ function! GetDocsetWord(docset, word)
 endfunction
 
 function! RunZeal(docset, word)
-    execute ":silent !".s:zeal." --query ".a:docset.":".a:word."&"
+    execute ":silent !".s:zeal_pre." --query ".a:docset.":".a:word.s:zeal_post
     redraw!
 endfunction
 
