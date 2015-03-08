@@ -5,6 +5,7 @@ let zeal_loaded = 1
 
 let s:filetype_zeal = {
             \ 'c': 'C',
+            \ 'h': 'C',
             \ 'cpp': 'C++',
             \ 'css': 'Css',
             \ 'html': 'Html',
