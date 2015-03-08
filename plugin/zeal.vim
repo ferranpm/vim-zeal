@@ -55,14 +55,12 @@ endfunction
 
 function! RunZealUnderCursor()
     let word = expand("<cword>")
-    let docset = GetDocset()
-    let docset = GetDocsetWord(docset, word)
-    call RunZeal(docset, word)
+    call RunZealWord(word)
 endfunction
 
 function! RunZealWord(word)
     let docset = GetDocset()
-    let docset = GetDocsetWord(docset)
+    let docset = GetDocsetWord(docset, a:word)
     call RunZeal(docset, a:word)
 endfunction
 
