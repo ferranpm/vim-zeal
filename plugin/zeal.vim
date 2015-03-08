@@ -1,3 +1,8 @@
+if exists("zeal_loaded") || &cp
+    finish
+endif
+let zeal_loaded = 1
+
 let s:filetype_zeal = {
             \ 'c': 'C',
             \ 'cpp': 'C++',
